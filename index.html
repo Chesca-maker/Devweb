@@ -475,7 +475,7 @@
       <nav class="navigation2" id="navigation2">
         <ul>
           <li><a href="HTML/page1.html" id="opt7">Mercure</a></li>
-          <li><a href="HTML/page2.html" id="opt8">Vénus</a></li>
+          <li><a href="HTML/page1.html" id="opt8">Vénus</a></li>
           <li><a href="HTML/page3.html" id="opt9">Terre</a></li>
           <li><a href="HTML/page4.html" id="opt10">Mars</a></li>
           <li><a href="HTML/page5.html" id="opt11">Jupitère</a></li>
@@ -794,7 +794,12 @@
 
       </script>
       <script type="module" src="JS/app.js">
+
       import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+      const SUPABASE_URL = "https://efkrdnemrcvlytyfenng.supabase.co";
+      const SUPABASE_KEY = "sb_publishable_EwC1cqIYolku4XMNW0um5A_dUiU2QDu";
+
+
       const supabase = createClient(URL, CLE_PUBLIQUE);
       </script>
     </body>

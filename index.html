@@ -801,6 +801,20 @@
 
 
       const supabase = createClient(URL, CLE_PUBLIQUE);
+
+
+
+
+        const { data, error } = await supabase.auth.signUp({
+    email: Email,
+    password: Password,
+    options: {
+        data: {
+            prenom: Prenom,
+            nom: Nom
+        }
+    }
+});
       </script>
     </body>
 

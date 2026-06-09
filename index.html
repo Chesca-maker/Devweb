@@ -753,6 +753,7 @@
           greeting.textContent = `${name}`;
           greeting2.textContent = `Bonjour ${name}! Vous êtes déjà connecté. Oublie-toi?`;
           greeting2.style.color = '#341539';
+          title.textContent = 'Connexion';
           forgetMe.style.display = 'block';
           rememberMe.style.display = 'none';
           opt2.classList.add("opt2");
@@ -770,8 +771,7 @@
           opt15.classList.remove("opt15");
         } else {
           greeting.textContent = '';
-          greeting2.textContent = 'Bienvenue!';
-          greeting2.style.display = 'none';
+          title.textContent = 'Inscription';
           forgetMe.style.display = 'none';
           rememberMe.style.display = 'block';
           opt2.classList.add("opt2");

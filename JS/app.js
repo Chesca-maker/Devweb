@@ -142,10 +142,10 @@ console.log("Réponse Supabase", data, error);
 }
 
 )
-const RegisterEmail = document.getElementById("registerEmail");
-const RegisterPassword = document.getElementById("registerPassword");
+const RegisterEmail = document.getElementById("email1");
+const RegisterPassword = document.getElementById("pass1");
 const RegisterPrenom = document.getElementById("registerPrenom");
-const RegisterNom = document.getElementById("registerNom");
+const RegisterNom = document.getElementById("namefield");
 
 
 //  Quand on clique sur "Se connecter", on fait apparître le formulaire   Ceci permet juste de faire apparaître le formulaire

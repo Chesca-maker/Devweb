@@ -22,7 +22,7 @@ const RegisterContainer = document.getElementById("registerFormContainer");
 const LoginForm = document.getElementById("input-group2");
 const RegisterForm = document.getElementById("input-group1");
 
-//  Récupération des erreurs //*À Changer
+//  Récupération des erreurs //
 const LoginError = document.getElementById("loginError");
 const RegisterError = document.getElementById("registerError")
 
@@ -115,7 +115,7 @@ RegisterForm.addEventListener("submit", async (event) => {
 
 
 //  Inscription Supabase
-const { data, error } = await supabase.auth.signUp({
+const = {
     email: Email,
     password: Password,
     options: {

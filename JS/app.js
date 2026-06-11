@@ -42,8 +42,7 @@ RegisterForm.addEventListener("submit", async (event) => {
     const Nom = RegisterNom.value.trim();
 
 
-//  Inscription Supabase
-const = {
+const { data, error } = await supabase.auth.signUp({
     email: Email,
     password: Password,
     options: {

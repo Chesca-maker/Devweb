@@ -28,53 +28,6 @@ const RegisterPassword = document.getElementById("pass1");
 const RegisterPrenom = document.getElementById("registerPrenom");
 const RegisterNom = document.getElementById("namefield");
 
-console.log("Tentative inscription", Email, Prenom, Nom);
-
-
-//Contrôle des données du formulaire d'inscription
-RegisterForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-//  Récupération des valeurs des formulaires
-    const Email = RegisterEmail.value.trim();
-    const Password = RegisterPassword.value;
-    const Prenom = RegisterPrenom.value.trim();
-    const Nom = RegisterNom.value.trim();
-
-
-const { data, error } = await supabase.auth.signUp({
-    email: Email,
-    password: Password,
-    options: {
-        data: {
-            prenom: Prenom,
-            nom: Nom
-        }
-    }
-});
-
-    if (error) {
-        RegisterError.textContent = error.message;
-        return;
-    }
-console.log("Réponse Supabase", data, error);
-
-
-
-//  Affichage de la page de connexion
-    RegisterError.textContent = "";
-    LoginContainer.classList.remove("hidden");
-    RegisterContainer.classList.add("hidden");
-
-}
-
-)
-const RegisterEmail = document.getElementById("email1");
-const RegisterPassword = document.getElementById("pass1");
-const RegisterPrenom = document.getElementById("registerPrenom");
-const RegisterNom = document.getElementById("namefield");
-
-
 //  Quand on clique sur "Se connecter", on fait apparître le formulaire   Ceci permet juste de faire apparaître le formulaire
 BtnLogin.addEventListener("click", () => {
     LoginContainer.classList.remove("hidden");

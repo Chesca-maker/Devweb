@@ -703,7 +703,7 @@
         }
       }
 
-      form.addEventListener("submit", (e) => {
+      form1.addEventListener("submit", (e) => {
         e.preventDefault();
         arobase();
         validate1();
@@ -718,7 +718,7 @@
           !passField1.classList.contains("invalid") &&
           !cPassField1.classList.contains("invalid")
         ) {
-          location.href = form.getAttribute("action");
+          location.href = form1.getAttribute("action");
           localStorage.setItem('name', getName.value);
           localStorage.setItem('email', getEmail.value);
           localStorage.setItem('password', getPassword.value);
@@ -788,10 +788,6 @@
           opt15.classList.add("opt15");
         }
       }
-
-      document.body.onload = nameDisplayCheck;
-      console.log(localStorage.getItem('name'));
-
       </script>
       <script type="module" src="JS/app.js">
 

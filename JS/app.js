@@ -118,7 +118,7 @@ RegisterForm.addEventListener("submit", async (event) => {
  // Analyser les mots de passes sont les mêmes
 
       const form = document.querySelector("form"),
-      nameField1 = form.querySelector(".namefield"),
+      nameField1 = form.querySelector(".input-Field1"),
       nameInput1 = emailField1.querySelector(".namefield"),
       emailField1 = form.querySelector(".email-field1"),
       emailInput1 = emailField1.querySelector(".email1"),

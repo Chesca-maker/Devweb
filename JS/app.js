@@ -10,8 +10,8 @@ const SUPABASE_KEY = "sb_publishable_EwC1cqIYolku4XMNW0um5A_dUiU2QDu";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Récupération des boutons Il est important de vérifier votre code HTML pour remplacer btnLogin et btnRegister en fonction de leur id
-const BtnLogin = document.getElementById("submitBtn1");
-const BtnRegister = document.getElementById("submitBtn2");
+const BtnLogin = document.getElementById("submitBtn2");
+const BtnRegister = document.getElementById("submitBtn1");
 
 
 //  Récupération des données

@@ -97,9 +97,10 @@
         validate1();
         validate2();
 
-        emailInput1.addEventListener("keyup", arobase);
-        passInput1.addEventListener("keyup", validate1);
-        cPassInput1.addEventListener("keyup", validate2);
+         const Email = RegisterEmail.value.trim();
+    const Password = RegisterPassword.value;
+    const Prenom = RegisterPrenom.value.trim();
+    const Nom = RegisterNom.value.trim();
 
         if (
           !emailField1.classList.contains("invalid") &&
@@ -107,13 +108,31 @@
           !cPassField1.classList.contains("invalid")
         ) {
           location.href = form.getAttribute("action");
-          localStorage.setItem('name', getName.value);
-          localStorage.setItem('email', getEmail.value);
-          localStorage.setItem('password', getPassword.value);
 
           nameDisplayCheck();
         }
       });
+
+//  Inscription Supabase
+const { data, error } = await supabase.auth.signUp({
+    email: Email,
+    password: Password,
+    options: {
+        data: {
+            prenom: Prenom,
+            nom: Nom
+        }
+    }
+});
+
+const message = document.getElementById("message1");
+
+if (error) {
+    message.textContent = error.message;
+    return;
+}
+
+console.log("Réponse Supabase", data, error);
 
       const greeting = document.querySelector('.greeting');
       const greeting2 = document.querySelector('.greeting2');

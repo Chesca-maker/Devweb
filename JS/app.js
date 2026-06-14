@@ -123,7 +123,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
         }
       });
 
-console.log("Tentative inscription", Email, Prenom, Nom);
+console.log("Tentative inscription", Email, Password, Prenom, Nom);
 
 //  Inscription Supabase
 const { data, error } = await supabase.auth.signUp({

@@ -10,12 +10,12 @@ const SUPABASE_KEY = "sb_publishable_EwC1cqIYolku4XMNW0um5A_dUiU2QDu";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 //Champs du formulaire d'inscription
-const RegisterEmail = document.getElementById("getEmail");
-const RegisterPassword = document.getElementById("getPassword");
+const RegisterEmail = document.getElementById("email1");
+const RegisterPassword = document.getElementById("pass1");
 const RegisterPrenom = document.getElementById("registerPrenom");
-const RegisterNom = document.getElementById("getName");
+const RegisterNom = document.getElementById("namefield");
 
-const form = document.getElementById(".form");
+const form = document.getElementById("form");
 
 console.log("Tentative inscription", Email, Prenom, Nom);
 
@@ -29,6 +29,18 @@ form.addEventListener("submit", (event) => {
     const Password = RegisterPassword.value;
     const Prenom = RegisterPrenom.value.trim();
     const Nom = RegisterNom.value.trim();
+
+    if (
+      !emailField1.classList.contains("invalid") &&
+      !passField1.classList.contains("invalid") &&
+      !cPassField1.classList.contains("invalid")
+    ) {
+      location.href = form.getAttribute("action");
+      localStorage.setItem('name', getName.value);
+      localStorage.setItem('email', getEmail.value);
+      localStorage.setItem('password', getPassword.value);
+
+      nameDisplayCheck();
 
 //  Inscription Supabase
 const { data, error } = await supabase.auth.signUp({

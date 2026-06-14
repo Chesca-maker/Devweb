@@ -492,7 +492,7 @@
         <div class="container" id="container">
           <div class="form-box" id="form-box">
             <h1 id="title" class="title">Inscription</h1>
-            <form action="file:///Users/eah28chra/Desktop/Dévelopement%20web/Entreprise%20Sautier%20de%20site%20web%20de%20Chesca/index.html" id="form1">
+            <form action="file:///Users/eah28chra/Desktop/Dévelopement%20web/Entreprise%20Sautier%20de%20site%20web%20de%20Chesca/index.html" id="form" class="form">
               <div class="input-group1" id="input-group1">
 
                 <div class="input-field1">
@@ -613,8 +613,6 @@
       }
 
        const form = document.querySelector("form"),
-      nameField1 = form.querySelector(".name-field1"),
-      nameInput1 = emailField1.querySelector(".namefield"),
       emailField1 = form.querySelector(".email-field1"),
       emailInput1 = emailField1.querySelector(".email1"),
       passField1 = form.querySelector(".psw1-field1"),
@@ -705,65 +703,28 @@
       }
 
       form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        arobase();
-        validate1();
-        validate2();
+  e.preventDefault();
+  arobase();
+  validate1();
+  validate2();
 
-    const Email = getEmail.value.trim();
-    const Password = getPassword.value;
-    const Prenom = RegisterPrenom.value.trim();
-    const Nom = getName.value.trim();
+  emailInput1.addEventListener("keyup", arobase);
+  passInput1.addEventListener("keyup", validate1);
+  cPassInput1.addEventListener("keyup", validate2);
 
-        if (
-          !emailField1.classList.contains("invalid") &&
-          !passField1.classList.contains("invalid") &&
-          !cPassField1.classList.contains("invalid")
-        ) {
-          !emailField1.classList.contains("invalid") &&
-          !passField1.classList.contains("invalid") &&
-          !cPassField1.classList.contains("invalid")
-          location.href = form.getAttribute("action");
-           localStorage.setItem('name', getName.value);
-          localStorage.setItem('email', getEmail.value);
-          localStorage.setItem('password', getPassword.value);
+  if (
+    !emailField1.classList.contains("invalid") &&
+    !passField1.classList.contains("invalid") &&
+    !cPassField1.classList.contains("invalid")
+  ) {
+    location.href = form.getAttribute("action");
+    localStorage.setItem('name', getName.value);
+    localStorage.setItem('email', getEmail.value);
+    localStorage.setItem('password', getPassword.value);
 
-          nameDisplayCheck();
-        }
-      });
-
-      import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
-
-//  Récupère ces infos dans ton dashboard Supabase (URL + publishable/anon key)
-const SUPABASE_URL = "Mettrel'URL copiée sur Supabase ici";
-const SUPABASE_KEY = "Mettre la clé publique de votre projet Supabase ici";
-
-//  Client Supabase
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
-
-console.log("Tentative inscription", Email, Password, Prenom, Nom);
-
-//  Inscription Supabase
-const { data, error } = await supabase.auth.signUp({
-    email: Email,
-    password: Password,
-    options: {
-        data: {
-            prenom: Prenom,
-            nom: Nom
-        }
-    }
+    nameDisplayCheck();
+  }
 });
-
-const message = document.getElementById("message1");
-
-if (error) {
-    message.textContent = error.message;
-    return;
-}
-
-console.log("Réponse Supabase", data, error);
 
       const greeting = document.querySelector('.greeting');
       const greeting2 = document.querySelector('.greeting2');
@@ -833,3 +794,4 @@ console.log("Réponse Supabase", data, error);
     </body>
 
 </html>
+

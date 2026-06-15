@@ -138,12 +138,7 @@ const form = document.querySelector("form"),
   emailInput1.addEventListener("keyup", arobase);
   passInput1.addEventListener("keyup", validate1);
   cPassInput1.addEventListener("keyup", validate2);
-
-    const Email = RegisterEmail.value.trim();
-    const Password = RegisterPassword.value;
-    const Prenom = RegisterPrenom.value.trim();
-    const Nom = RegisterNom.value.trim();
-
+          
   if (
     !emailField1.classList.contains("invalid") &&
     !passField1.classList.contains("invalid") &&
@@ -153,6 +148,10 @@ const form = document.querySelector("form"),
     localStorage.setItem('name', getName.value);
     localStorage.setItem('email', getEmail.value);
     localStorage.setItem('password', getPassword.value);
+    const Email = RegisterEmail.value.trim();
+    const Password = RegisterPassword.value;
+    const Prenom = RegisterPrenom.value.trim();
+    const Nom = RegisterNom.value.trim();
 
     nameDisplayCheck();
   }

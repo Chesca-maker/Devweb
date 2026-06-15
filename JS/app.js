@@ -41,6 +41,9 @@ form.addEventListener("submit", (event) => {
       localStorage.setItem('password', getPassword.value);
 
       nameDisplayCheck();
+    
+  }
+});
 
 //  Inscription Supabase
 const { data, error } = await supabase.auth.signUp({

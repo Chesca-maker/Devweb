@@ -9,12 +9,6 @@ const SUPABASE_KEY = "sb_publishable_EwC1cqIYolku4XMNW0um5A_dUiU2QDu";
 //  Client Supabase
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-//Champs du formulaire d'inscription
-const RegisterEmail = document.getElementById("email1");
-const RegisterPassword = document.getElementById("pass1");
-const RegisterPrenom = document.getElementById("registerPrenom");
-const RegisterNom = document.getElementById("namefield");
-
 console.log("Tentative inscription", Email, Prenom, Nom);
 
 //  Inscription Supabase
@@ -148,10 +142,10 @@ const form = document.querySelector("form"),
     localStorage.setItem('name', getName.value);
     localStorage.setItem('email', getEmail.value);
     localStorage.setItem('password', getPassword.value);
-    const Email = RegisterEmail.value.trim();
-    const Password = RegisterPassword.value;
+    const Email = getEMail.value.trim();
+    const Password = getPassword.value;
     const Prenom = RegisterPrenom.value.trim();
-    const Nom = RegisterNom.value.trim();
+    const Nom = getName.value.trim();
 
     nameDisplayCheck();
   }

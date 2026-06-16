@@ -1,5 +1,5 @@
 //Importation de Supabase
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+import { createClient } from "https://efkrdnemrcvlytyfenng.supabase.co";
 
 
 //  Récupère ces infos dans ton dashboard Supabase (URL + publishable/anon key)

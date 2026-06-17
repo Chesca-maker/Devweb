@@ -17,7 +17,6 @@ const { data, error } = await supabase.auth.signUp({
     password: Password,
     options: {
         data: {
-            prenom: Prenom,
             nom: Nom
         }
     }

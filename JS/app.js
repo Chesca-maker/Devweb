@@ -32,3 +32,5 @@ console.log("Réponse Supabase", data, error);
 }
 
 )
+
+
